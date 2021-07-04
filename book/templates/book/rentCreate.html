@@ -1,0 +1,13 @@
+{% load static %}
+{% block content %}
+
+    <h1>Create your own Book Rent</h1>
+    <h3>A User can reant maximum 2 books and untill its availability </h3>
+
+<form action="" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" name="Submit">
+</form>
+
+{% endblock %}

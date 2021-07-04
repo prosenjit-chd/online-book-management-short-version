@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User List</title>
+</head>
+<body>
+    <h2>Book Rent List</h2>
+    <p>Add more rent <a href="{% url 'rent_create' %}">Click</a> here</p>
+
+        <table>
+    <tr>
+    <th>User Name</th>
+     <th>Book Name</th>
+    <th>Date Taken</th>
+     <th>Date Delivery</th>
+     <th>Update</th>
+    </tr>
+
+     {% for rent in rents %}
+    <tr>
+    <td>{{rent.user.name}}</td>
+    <td>{{rent.book.bookName}}</td>
+    <td>{{ rent.date_taken }}</td>
+    <td>{{ rent.date_delivery }}</td>
+    <td><a href="{% url 'rent_update' rent.id %}">Update</a></td>
+    </tr>
+    {% endfor %}
+
+    </table>
+</body>
+</html>
